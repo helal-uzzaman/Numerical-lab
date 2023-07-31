@@ -1,0 +1,41 @@
+function [root, iteration] =  newtonRaphson(func)
+
+if nargin ==0
+    syms x;
+    func = x^3-2*x-5;
+end
+syms x;
+a = 1;                   % any value
+errordiff = 0.001;
+%converge check
+if abs( eval(subs(func,x,a)) )< 1
+    disp(will converge)
+else
+    for i= 1: 1000
+        if 
+end
+    
+end
+
+
+for i = 1: 100
+    fx = eval(subs(func,x,a));
+    fdiffx = eval(subs(diff(func),x,a));
+    a =a- fx/fdiffx;
+    roots(i) = a;
+    if i> 1
+        d= roots(i) - roots(i-1);
+        if abs(d) < errordiff
+            break;
+        end
+    end
+end
+
+% output decoration
+iter = [1: length(roots)];
+iterNo = iter';
+root = roots';
+table(iterNo, root)
+root = a;
+iteration = length(roots);
+end
