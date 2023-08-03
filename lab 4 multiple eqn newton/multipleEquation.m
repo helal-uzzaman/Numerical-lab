@@ -29,7 +29,7 @@ for n = 1: maxIter
     % evaluating Jacobian matrix at x
     for i = 1: numberOfEquations
         for j = 1: numberOfEquations
-            J(i,j) = eval (subs (JacobianMatrix(i,j), var(j) , xMatrix(j) ));
+            J(i,j) = eval (subs (JacobianMatrix(i,j),[x y] , xMatrix' ));
         end
     end
     % evaluating f(x) at x

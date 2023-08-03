@@ -8,8 +8,13 @@ clc
 disp("Gauss Elimination to solve system of linear equations");
 disp("=====================================================");
 
-a = input("Enter coefficient Matrix: ");
-b = input("Enter constant Matrix: ");
+a = input('Enter coefficient Matrix: ');
+b = input('Enter constant Matrix: ');
+
+% Example
+% a = [ 2 1 1; 3 2 3; 1 4 9];
+% b = [10; 18; 16];
+% ans x =  7    -9     5
 %augmented matrix
 Aug = [a b]
 % storing size of a matrix
@@ -39,8 +44,8 @@ for j=matrixSize(1,1):-1:1
     if (a(j,j)==0)
         disp('Matrix is singular!');
     end
-    x(j)=b(j)/a(j,j);
-    b(1:j-1)=b(1:j-1)-a(1:j-1,j)*x(j);
+    x(j)=b(j)/a(j,j);  % okay
+    b(1:j-1)=b(1:j-1)-a(1:j-1,j)*x(j);  % problem
 end
 disp('Result')
 x

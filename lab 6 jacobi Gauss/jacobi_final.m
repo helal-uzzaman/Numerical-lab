@@ -21,7 +21,7 @@ for row= 1: size(a,1)
         if row == col
             if abs( a(row, col)) > 0
                 mul = a(row,col);
-                b(row)/mul;
+%                 b(row)/mul;
                 a(row,col) = 0;
                 eqn(row,:) = [b(row)/mul  -a(row,:)/mul ];
             end
@@ -37,7 +37,9 @@ eqnC =eqn(:,1);
 % main loop
 for i= 1: maxIter
     prex = x;
-    x = sum([eqnC eqnV*x], 2);
+    x = sum([eqnC eqnV*x], 2);  % only this line 2 means sum row by row
+    
+    % decoration code
     x1(i,1) = x(1);
     x2(i,1) = x(2);
     x3(i,1) = x(3);

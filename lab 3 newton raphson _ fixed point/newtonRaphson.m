@@ -9,7 +9,7 @@ syms x;
 a = initial_guess;                   % any value
 errordiff = 0.001;
 % converge check
-diffx = diff(func)
+diffx = diff(func) 
 secondDiffx = diff(diffx)
 fxd = (subs(func, x, a) * subs(secondDiffx, x, a)/ (subs(diffx, x, a)^2) )
 
@@ -18,7 +18,7 @@ if abs(fxd) < 1
     disp('Calculating root for given function using newton raphson method');
     % main loop
     for i = 1: 100
-        fx = eval(subs(func,x,a));
+        fx = eval(subs(func,x,a))
         fdiffx = eval(subs(diff(func),x,a));
         a =a- fx/fdiffx;
         roots(i) = a;

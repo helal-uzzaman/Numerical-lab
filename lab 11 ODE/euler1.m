@@ -7,17 +7,17 @@
 clc;
 clear;
 % Input taking
-f = input('Enter the function: ');
-x0 = input('Initial value of independent variable: ');
-y0 = input('Initial value of dependent variable: ');
-fx = input('Calculate at: ');
-h = input('Step size: ');
+% f = input('Enter the function: ');
+% x0 = input('Initial value of independent variable: ');
+% y0 = input('Initial value of dependent variable: ');
+% fx = input('Calculate at: ');
+% h = input('Step size: ');
 
 % Example 
-% f = @(x, y) -y           
-% x0 = 0; y0 = 1;
-% h = .01;                    % step size
-% fx = .04;                   % calculate at
+f = @(x, y) -y           
+x0 = 0; y0 = 1;
+h = .01;                    % step size
+fx = .04;                   % calculate at
 
 n = fx / h;
 y = zeros(1, n+1);
